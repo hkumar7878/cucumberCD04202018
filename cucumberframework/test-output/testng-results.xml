@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Functional Test Suite_Chrome" duration-ms="22798" started-at="2018-04-12T13:20:07Z" finished-at="2018-04-12T13:20:30Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Test" duration-ms="22798" started-at="2018-04-12T13:20:07Z" finished-at="2018-04-12T13:20:30Z">
+      <class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="setUpClass" is-config="true" duration-ms="691" started-at="2018-04-12T18:50:07Z" finished-at="2018-04-12T18:50:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="feature" duration-ms="21971" started-at="2018-04-12T18:50:08Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-04-12T18:50:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ProductCategoryPageWomen]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- feature -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="tearDownClass" is-config="true" duration-ms="19" started-at="2018-04-12T18:50:30Z" finished-at="2018-04-12T18:50:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor -->
+    </test> <!-- Test -->
+  </suite> <!-- Functional Test Suite_Chrome -->
+</testng-results>
