@@ -2,34 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="22798" started-at="2018-04-12T13:20:07Z" finished-at="2018-04-12T13:20:30Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="82473" started-at="2018-04-13T14:39:34Z" finished-at="2018-04-13T14:40:57Z">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="22798" started-at="2018-04-12T13:20:07Z" finished-at="2018-04-12T13:20:30Z">
-      <class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="setUpClass" is-config="true" duration-ms="691" started-at="2018-04-12T18:50:07Z" finished-at="2018-04-12T18:50:08Z">
+    <test name="Test" duration-ms="82473" started-at="2018-04-13T14:39:34Z" finished-at="2018-04-13T14:40:57Z">
+      <class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification@1e397ed7]" name="beforeSuite" is-config="true" duration-ms="16" started-at="2018-04-13T20:09:34Z" finished-at="2018-04-13T20:09:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="feature" duration-ms="21971" started-at="2018-04-12T18:50:08Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2018-04-12T18:50:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ProductCategoryPageWomen]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification@1e397ed7]" name="runCukes" duration-ms="82426" started-at="2018-04-13T20:09:35Z" finished-at="2018-04-13T20:10:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor@4566e5bd]" name="tearDownClass" is-config="true" duration-ms="19" started-at="2018-04-12T18:50:30Z" finished-at="2018-04-12T18:50:30Z">
+        </test-method> <!-- runCukes -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification@1e397ed7]" name="afterSuite" is-config="true" duration-ms="1" started-at="2018-04-13T20:10:57Z" finished-at="2018-04-13T20:10:57Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.WomenProductVerificationBasedOnProductColor -->
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification -->
     </test> <!-- Test -->
   </suite> <!-- Functional Test Suite_Chrome -->
 </testng-results>
