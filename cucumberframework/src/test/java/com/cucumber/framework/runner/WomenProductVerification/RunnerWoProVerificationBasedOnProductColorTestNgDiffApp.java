@@ -13,7 +13,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		monochrome = false
 )
 
-public class WomenProductVerificationBasedOnProductColor extends AbstractTestNGCucumberTests{
+public class RunnerWoProVerificationBasedOnProductColorTestNgDiffApp extends AbstractTestNGCucumberTests{
 
 }
 

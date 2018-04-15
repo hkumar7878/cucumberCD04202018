@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Functional_Test_Suite_Chrome">
-                    <span>C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
+                    <span>C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\ProdVerify.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -101,7 +101,7 @@
                     <div class="method-list-content failed suite-Functional_Test_Suite_Chrome">
                       <span>
                         <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite_Chrome" title="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification" hash-for-method="runCukes">runCukes</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite_Chrome" title="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification" hash-for-method="runCukes">runCukes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Functional_Test_Suite_Chrome -->
@@ -119,7 +119,7 @@
           <div class="suite-Functional_Test_Suite_Chrome-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification</span>
+              <span class="class-name">com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -127,13 +127,63 @@
                   <a name="runCukes">
                   </a> <!-- runCukes -->
                   <span class="method-name">runCukes</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: java.lang.NullPointerException
+                  <div class="stack-trace">cucumber.runtime.CucumberException: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //[@id=&apos;layered_block_left&apos;]/p&apos; (tried for 20 second(s) with 500 MILLISECONDS interval)
 	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:57)
-	at com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification.runCukes(WomenProductVerification.java:39)
-Caused by: java.lang.NullPointerException
-	at com.cucumber.framework.stepdefinition.Login.LoginToApplication.navigate_to_application(LoginToApplication.java:25)
-	at ✽.Given navigate to application(featurefile/productCategory/TestTotalNumberOfWomenDressProduct.feature:5)
-... Removed 24 stack frames
+	at com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification.runCukes(RunnerWomenProductVerification.java:39)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //[@id=&apos;layered_block_left&apos;]/p&apos; (tried for 20 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:257)
+	at com.cucumber.framework.Helper.Wait.WaitHelper.waitForElement(WaitHelper.java:50)
+	at com.cucumber.framework.pageobject.WomenMainPage.&lt;init&gt;(WomenMainPage.java:48)
+	at com.cucumber.framework.pageobject.HomePage.clickOnMenu(HomePage.java:55)
+	at com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory.user_click_on_women_navigation_menu(TestWomenTopsProductCategory.java:27)
+	at ✽.And User click on women navigation menu(featurefile/productCategory/TestWomenTopAndDressesFunctionality.feature:6)
+Caused by: org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression //[@id=&apos;layered_block_left&apos;]/p because of the following error:
+SyntaxError: Failed to execute &apos;evaluate&apos; on &apos;Document&apos;: The string &apos;//[@id=&apos;layered_block_left&apos;]/p&apos; is not a valid XPath expression.
+  (Session info: chrome=65.0.3325.181)
+  (Driver info: chromedriver=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91),platform=Windows NT 6.1.7601 SP1 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 26 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;3.1.0&apos;, revision: &apos;b94c902&apos;, time: &apos;2017-02-16 12:21:31 -0800&apos;
+System info: host: &apos;HITESH-PC&apos;, ip: &apos;192.168.29.245&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_111&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.36.540470 (e522d04694c7ebea4ba8821272dbef4f9b818c91), userDataDir=C:\Users\hitesh\AppData\Local\Temp\scoped_dir6104_18073}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=65.0.3325.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: 0b109e1a20dd40383ccd74ede6f525cc
+*** Element info: {Using=xpath, value=//[@id=&apos;layered_block_left&apos;]/p}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:473)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy19.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:302)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$100(ExpectedConditions.java:41)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:288)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:285)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:684)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:677)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
+	at com.cucumber.framework.Helper.Wait.WaitHelper.waitForElement(WaitHelper.java:50)
+	at com.cucumber.framework.pageobject.WomenMainPage.&lt;init&gt;(WomenMainPage.java:48)
+	at com.cucumber.framework.pageobject.HomePage.clickOnMenu(HomePage.java:55)
+	at com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory.user_click_on_women_navigation_menu(TestWomenTopsProductCategory.java:27)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.model.CucumberFeature.run(CucumberFeature.java:165)
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:50)
+	at com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification.runCukes(RunnerWomenProductVerification.java:39)
+... Removed 55 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -142,7 +192,7 @@ Caused by: java.lang.NullPointerException
         </div> <!-- panel Functional_Test_Suite_Chrome -->
         <div panel-name="test-xml-Functional_Test_Suite_Chrome" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
+            <span class="header-content">C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\ProdVerify.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -151,7 +201,7 @@ Caused by: java.lang.NullPointerException
 &lt;suite thread-count=&quot;1&quot; guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Functional Test Suite_Chrome&quot;&gt;
   &lt;test name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification&quot;/&gt;
+      &lt;class name=&quot;com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Functional Test Suite_Chrome --&gt;
@@ -194,13 +244,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runCukes')
-data.setCell(0, 2, 'com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification')
-data.setCell(0, 3, 1640);
+data.setCell(0, 2, 'com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification')
+data.setCell(0, 3, 44522);
 window.suiteTableData['Functional_Test_Suite_Chrome']= { tableData: data, tableDiv: 'times-div-Functional_Test_Suite_Chrome'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 seconds</span>
+              <span class="suite-total-time">Total running time: 44 seconds</span>
               <div id="times-div-Functional_Test_Suite_Chrome">
               </div> <!-- times-div-Functional_Test_Suite_Chrome -->
             </div> <!-- times-div -->
@@ -226,7 +276,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeSuite</span>
                 <span class="method-start">0 ms</span>
@@ -235,11 +285,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runCukes</span>
-                <span class="method-start">46 ms</span>
+                <span class="method-start">55 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">1842 ms</span>
+                <span class="method-start">44661 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

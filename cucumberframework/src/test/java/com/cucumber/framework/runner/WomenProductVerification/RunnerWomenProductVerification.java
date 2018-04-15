@@ -10,7 +10,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features={"classpath:featurefile/productCategory/TestTotalNumberOfDressProduct_Men&Women.feature"}
+@CucumberOptions(features={"classpath:featurefile/productCategory/TestWomenTopAndDressesFunctionality.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
 		plugin = {"pretty", "html:target/cucumber-html-report"},
@@ -18,7 +18,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		monochrome = false
 )
 
-public class WomenProductVerification {
+public class RunnerWomenProductVerification {
 	
 	@BeforeSuite
 	

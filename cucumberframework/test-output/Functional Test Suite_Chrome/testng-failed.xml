@@ -3,13 +3,13 @@
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Functional Test Suite_Chrome]">
   <test name="Test(failed)">
     <classes>
-      <class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification">
+      <class name="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification">
         <methods>
+          <include name="afterSuite"/>
           <include name="runCukes"/>
           <include name="beforeSuite"/>
-          <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification -->
+      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Functional Test Suite_Chrome] -->

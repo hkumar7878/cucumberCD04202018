@@ -13,9 +13,9 @@ import cucumber.api.java.en.Then;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 
-public class WomenTopsProductCategory {
+public class TestWomenTopsProductCategory {
 	
-private final Logger log= LoggerHelper.getLogger(WomenTopsProductCategory.class);
+private final Logger log= LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
 HomePage homepage;
 WomenMainPage womenMainPg;
 WomenTopsPage womenTopsPage;
