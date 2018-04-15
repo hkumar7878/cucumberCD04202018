@@ -22,6 +22,12 @@ public class HomePage {
 	@FindBy(xpath="//a[@title='Women']")
 	public WebElement womenMenu;
 	
+	@FindBy(xpath="//a[@title='Tops']")
+	public WebElement women_TopsLink;
+	
+	@FindBy(xpath="//a[@title='Dresses']")
+	public WebElement women_DressesLink;
+	
 	@FindBy(xpath="//[@id='block_top_menu']/ul/li[2]/a")
 	public WebElement dressesMenu;
 	
@@ -43,10 +49,10 @@ public class HomePage {
 		waitHelper.waitForElement(driver,20,womenMenu);
 }
 	
-	public WomenProductCategory clickOnMenu(WebElement element){
+	public WomenMainPage clickOnMenu(WebElement element){
 		log.info("clickin on : "+element.getText());
 		element.click();
-		return new WomenProductCategory(driver);
+		return new WomenMainPage(driver);
 }
 
 }

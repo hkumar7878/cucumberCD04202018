@@ -23,7 +23,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -37,7 +37,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Functional_Test_Suite_Chrome">
-              <span class="suite-name border-passed">Functional Test Suite_Chrome</span>
+              <span class="suite-name border-failed">Functional Test Suite_Chrome</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -48,7 +48,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Functional_Test_Suite_Chrome">
-                    <span>C:\Users\hiteshg\git\cucumberAdidas3_03312018\cucumberframework\src\test\java\com\cucumber\framework\runner\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
+                    <span>C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -90,21 +90,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Functional_Test_Suite_Chrome" class="hide-methods passed suite-Functional_Test_Suite_Chrome"> (hide)</a> <!-- hide-methods passed suite-Functional_Test_Suite_Chrome -->
-                      <a href="#" panel-name="suite-Functional_Test_Suite_Chrome" class="show-methods passed suite-Functional_Test_Suite_Chrome"> (show)</a> <!-- show-methods passed suite-Functional_Test_Suite_Chrome -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Functional_Test_Suite_Chrome" class="hide-methods failed suite-Functional_Test_Suite_Chrome"> (hide)</a> <!-- hide-methods failed suite-Functional_Test_Suite_Chrome -->
+                      <a href="#" panel-name="suite-Functional_Test_Suite_Chrome" class="show-methods failed suite-Functional_Test_Suite_Chrome"> (show)</a> <!-- show-methods failed suite-Functional_Test_Suite_Chrome -->
                     </span>
-                    <div class="method-list-content passed suite-Functional_Test_Suite_Chrome">
+                    <div class="method-list-content failed suite-Functional_Test_Suite_Chrome">
                       <span>
-                        <img width="3%" src="passed.png"/>
+                        <img width="3%" src="failed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Functional_Test_Suite_Chrome" title="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification" hash-for-method="runCukes">runCukes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Functional_Test_Suite_Chrome -->
+                    </div> <!-- method-list-content failed suite-Functional_Test_Suite_Chrome -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -116,9 +116,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Functional_Test_Suite_Chrome" class="panel Functional_Test_Suite_Chrome">
-          <div class="suite-Functional_Test_Suite_Chrome-class-passed">
+          <div class="suite-Functional_Test_Suite_Chrome-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -127,14 +127,22 @@
                   <a name="runCukes">
                   </a> <!-- runCukes -->
                   <span class="method-name">runCukes</span>
+                  <div class="stack-trace">cucumber.runtime.CucumberException: java.lang.NullPointerException
+	at cucumber.api.testng.TestNGCucumberRunner.runCukes(TestNGCucumberRunner.java:57)
+	at com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification.runCukes(WomenProductVerification.java:39)
+Caused by: java.lang.NullPointerException
+	at com.cucumber.framework.stepdefinition.Login.LoginToApplication.navigate_to_application(LoginToApplication.java:25)
+	at ✽.Given navigate to application(featurefile/productCategory/TestTotalNumberOfWomenDressProduct.feature:5)
+... Removed 24 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Functional_Test_Suite_Chrome-class-passed -->
+          </div> <!-- suite-Functional_Test_Suite_Chrome-class-failed -->
         </div> <!-- panel Functional_Test_Suite_Chrome -->
         <div panel-name="test-xml-Functional_Test_Suite_Chrome" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\hiteshg\git\cucumberAdidas3_03312018\cucumberframework\src\test\java\com\cucumber\framework\runner\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
+            <span class="header-content">C:\Users\hitesh\git\cucumberAdidas3_04152018\cucumberAdidas3_04152018\cucumberframework\src\test\java\com\cucumber\framework\testng\WoProductVerificationtestDiffColDiffTestNgApp.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -187,12 +195,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runCukes')
 data.setCell(0, 2, 'com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification')
-data.setCell(0, 3, 82426);
+data.setCell(0, 3, 1640);
 window.suiteTableData['Functional_Test_Suite_Chrome']= { tableData: data, tableDiv: 'times-div-Functional_Test_Suite_Chrome'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 1 seconds</span>
               <div id="times-div-Functional_Test_Suite_Chrome">
               </div> <!-- times-div-Functional_Test_Suite_Chrome -->
             </div> <!-- times-div -->
@@ -224,12 +232,14 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">runCukes</span>
-                <span class="method-start">37 ms</span>
+                <span class="method-start">46 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">82732 ms</span>
+                <span class="method-start">1842 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

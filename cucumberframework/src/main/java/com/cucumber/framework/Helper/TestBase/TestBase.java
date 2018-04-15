@@ -15,6 +15,7 @@ import cucumber.api.java.Before;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeMethod;
 
 
 
@@ -114,9 +115,11 @@ public class TestBase {
 		
 	}
 	
-	@Before()
+	//@BeforeMethod()
+	@Before
 	public void before() throws Exception
 	{
+		System.out.println("Before TESTNG before method");
 		System.out.println("Starting of Before method");
 		ObjectRepo.reader=new PropertyFileReader();
 		String bName=ObjectRepo.reader.getBrowserName();

@@ -5,9 +5,9 @@
     <classes>
       <class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification">
         <methods>
-          <include name="setUpClass"/>
-          <include name="feature" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
+          <include name="runCukes"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
         </methods>
       </class> <!-- com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification -->
     </classes>
