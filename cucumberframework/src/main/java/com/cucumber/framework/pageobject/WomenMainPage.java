@@ -22,10 +22,10 @@ public class WomenMainPage {
 	public String Orange = "Orange";
 	public String Yellow = "Yellow";
 	
-	@FindBy(xpath="//[@id='layered_block_left']/p")
-	WebElement catalogTextObj;
+	@FindBy(xpath="//h2[@class='title_block']")
+	WebElement womenHd;
 	
-	@FindBy(xpath="//span[@class='grower CLOSE']//following-sibling::a[contains(text(),'Tops')]")
+	@FindBy(xpath="(//span[@class='grower CLOSE']//following-sibling::a[contains(text(),'Tops')])[1]")
 	public WebElement topsLink;
 	
 	@FindBy(xpath="//[@id='layer_cart']/div[1]/div[1]/h2")
@@ -45,7 +45,7 @@ public class WomenMainPage {
 		PageFactory.initElements(driver, this);
 		waitHelper = new WaitHelper(driver);
 		//waitHelper.waitForElement(driver, womenMenu,ObjectRepo.reader.getExplicitWait());
-		waitHelper.waitForElement(driver,20,catalogTextObj);
+		waitHelper.waitForElement(driver,womenHd,20);
 }
 
 	public int getTotalProducts(){
@@ -58,10 +58,14 @@ public class WomenMainPage {
 		driver.findElement(By.xpath("//a[contains(text(),'"+color+"')]/parent::*/preceding-sibling::input[1]")).click();
 	}
 	
-	public WomenTopsPage clickOnWomenTopsLink(WebElement element)
+	public WomenTopsPage clickOnWomenTopsLink(WebElement element) throws InterruptedException
 	{
+		
+		waitHelper.waitForElement(driver,element,20);
+		log.info("Clicking on " + element.getText());
+		Thread.sleep(5000);
 		element.click();
-		log.info("Clicked on " + element.getText());
+		//log.info("Clicked on " + element.getText());
 		return new WomenTopsPage(driver);
 	}
 	

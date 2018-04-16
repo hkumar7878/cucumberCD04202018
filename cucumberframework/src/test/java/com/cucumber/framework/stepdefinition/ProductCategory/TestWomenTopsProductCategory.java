@@ -28,7 +28,7 @@ public void user_click_on_women_navigation_menu() throws Throwable {
     
 }
 
-@And("^click on women's Tops link$")
+@And("^User clicks on Tops link$")
 public void User_clicks_on_Tops_link() throws Throwable {
 	womenTopsPage= womenMainPg.clickOnWomenTopsLink(womenMainPg.topsLink);  
 }

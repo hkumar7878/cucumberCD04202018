@@ -27,7 +27,7 @@ public class WomenTopsPage {
 	@FindBy(xpath="//*[@id='categories_block_left']/h2")
 	WebElement txtTops;
 	
-	@FindBy(xpath="//[@id='center_column']/ul/li")
+	@FindBy(xpath="//ul//li//div[@class='product-container']")
     List<WebElement> totalProducts;
 	
 	public WomenTopsPage(WebDriver driver) {
@@ -40,8 +40,11 @@ public class WomenTopsPage {
 
 	public void verifyWomenTopPageHeader()
 	{
-		
-		if(genericHelperObj.isDisplayed(txtTops))
+		boolean flag=false;
+		//flag=return new GenericHelper().isDisplayed(txtTops);
+		genericHelperObj = new GenericHelper();
+		flag= genericHelperObj.isDisplayed(txtTops);
+		if(flag)
 		{
 			log.info("Tops page is displayed");
 			System.out.println("Tops page is displayed");
