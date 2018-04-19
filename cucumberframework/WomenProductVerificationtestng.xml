@@ -3,7 +3,7 @@
 <suite name="Functional Test Suite_Chrome" verbose="1" thread-count="1">
   <test name="Test">
  <classes> 				
-		<class name="com.cucumber.framework.runner.WomenProductVerification.WomenProductVerification"></class>	
+		<class name="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification"></class>	
 </classes>
  
 </test> 

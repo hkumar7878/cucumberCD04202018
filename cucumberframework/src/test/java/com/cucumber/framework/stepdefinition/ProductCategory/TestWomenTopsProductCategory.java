@@ -5,7 +5,9 @@ import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.pageobject.HomePage;
 import com.cucumber.framework.pageobject.WomenMainPage;
 import com.cucumber.framework.pageobject.WomenTopsPage;
-
+import com.cucumber.listener.Reporter;
+import cucumber.api.Scenario;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -20,8 +22,18 @@ HomePage homepage;
 WomenMainPage womenMainPg;
 WomenTopsPage womenTopsPage;
 
+
+/*@Before
+public void beforeScenario(Scenario scenario) {
+    if (scenario.getName().equals("My First Scenario")) {
+        Reporter.assignAuthor("Vimalraj");
+    }
+}*/
+
 @Given("^User click on women navigation menu$")
 public void user_click_on_women_navigation_menu() throws Throwable {
+	//Reporter.addStepLog("My test addStepLog message");
+	//Reporter.addScenarioLog("This is scenario log");
   homepage = new HomePage(TestBase.driver);
   log.info("Clicking on Women menu");
   womenMainPg = homepage.clickOnMenu(homepage.womenMenu);
