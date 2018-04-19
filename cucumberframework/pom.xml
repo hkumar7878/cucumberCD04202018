@@ -102,7 +102,29 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
-			</plugin>			
+			</plugin>
+			<plugin>
+				
+				<groupId>net.masterthought</groupId>
+   			 	<artifactId>cucumber-reporting</artifactId>
+   				<version>2.8.0</version>
+   				<executions>
+   				 <id>execution</id>
+   				  <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        
+                         <configuration>
+                            <projectName>cucummberAdidasProject</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-reports-html</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                            <enableFlashCharts>false</enableFlashCharts>
+                            <skippedFails>true</skippedFails>
+                        </configuration>
+   				</executions>
+   				
+			</plugin>		
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
