@@ -17,7 +17,9 @@ import java.io.File;
 @CucumberOptions(features={"classpath:featurefile/productCategory/TestWomenTopAndDressesFunctionality.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
-		plugin = {"pretty", "html:target/cucumber-html-report"},
+		plugin = {"html:target/cucumber-html-report",
+        "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
+        "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
 		dryRun=false,
 		monochrome = false

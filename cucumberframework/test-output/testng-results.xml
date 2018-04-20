@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="30646" started-at="2018-04-19T05:53:43Z" finished-at="2018-04-19T05:54:13Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="62305" started-at="2018-04-20T12:43:47Z" finished-at="2018-04-20T12:44:50Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="30646" started-at="2018-04-19T05:53:43Z" finished-at="2018-04-19T05:54:13Z">
+    <test name="Test" duration-ms="62305" started-at="2018-04-20T12:43:47Z" finished-at="2018-04-20T12:44:50Z">
       <class name="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@ff5b51f]" name="beforeSuite" is-config="true" duration-ms="10" started-at="2018-04-19T11:23:43Z" finished-at="2018-04-19T11:23:43Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="beforeSuite" is-config="true" duration-ms="62" started-at="2018-04-20T18:13:47Z" finished-at="2018-04-20T18:13:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@ff5b51f]" name="runCukes" duration-ms="30626" started-at="2018-04-19T11:23:43Z" finished-at="2018-04-19T11:24:13Z">
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="runCukes" duration-ms="62183" started-at="2018-04-20T18:13:48Z" finished-at="2018-04-20T18:14:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@ff5b51f]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-19T11:24:13Z" finished-at="2018-04-19T11:24:13Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-20T18:14:50Z" finished-at="2018-04-20T18:14:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
