@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Functional Test Suite_Chrome]">
-  <test name="Test(failed)">
+  <parameter name="browserType" value="Firefox"/>
+  <test name="Windows+firefox Test(failed)">
+    <parameter name="browserType" value="Firefox"/>
     <classes>
-      <class name="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification">
+      <class name="com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner">
         <methods>
-          <include name="afterSuite"/>
           <include name="runCukes"/>
+          <include name="afterTest"/>
+          <include name="afterSuite"/>
           <include name="beforeSuite"/>
         </methods>
-      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification -->
+      </class> <!-- com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Windows+firefox Test(failed) -->
 </suite> <!-- Failed suite [Functional Test Suite_Chrome] -->

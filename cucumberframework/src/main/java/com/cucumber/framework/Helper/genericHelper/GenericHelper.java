@@ -49,7 +49,7 @@ public class GenericHelper {
 		try
 		{
 			element.isDisplayed();
-			log.info("Element is displayed " + element);
+			log.info("Element is displayed " + element.getText().toString());
 			return true;
 		}
 		catch (Exception ex)

@@ -2,24 +2,58 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="62305" started-at="2018-04-20T12:43:47Z" finished-at="2018-04-20T12:44:50Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="34408" started-at="2018-04-22T17:45:10Z" finished-at="2018-04-22T17:45:45Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="62305" started-at="2018-04-20T12:43:47Z" finished-at="2018-04-20T12:44:50Z">
-      <class name="com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="beforeSuite" is-config="true" duration-ms="62" started-at="2018-04-20T18:13:47Z" finished-at="2018-04-20T18:13:47Z">
+    <test name="Windows+firefox Test" duration-ms="34408" started-at="2018-04-22T17:45:10Z" finished-at="2018-04-22T17:45:45Z">
+      <class name="com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@3a4799]" name="beforeSuite" is-config="true" duration-ms="22" started-at="2018-04-22T23:15:10Z" finished-at="2018-04-22T23:15:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="runCukes" duration-ms="62183" started-at="2018-04-20T18:13:48Z" finished-at="2018-04-20T18:14:50Z">
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@3a4799]" name="runCukes" duration-ms="34366" started-at="2018-04-22T23:15:10Z" finished-at="2018-04-22T23:15:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification@4566e5bd]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-20T18:14:50Z" finished-at="2018-04-20T18:14:50Z">
+        <test-method status="FAIL" signature="afterTest()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@3a4799]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-04-22T23:15:45Z" finished-at="2018-04-22T23:15:45Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at com.cucumber.framework.utility.ActionAfterClass.actionAfterTest(ActionAfterClass.java:20)
+	at com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner.afterTest(CDHomePageRunner.java:54)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:510)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:211)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:138)
+	at org.testng.TestRunner.afterRun(TestRunner.java:1023)
+	at org.testng.TestRunner.run(TestRunner.java:628)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:359)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:354)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:312)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:261)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1191)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
+	at org.testng.TestNG.run(TestNG.java:1024)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="SKIP" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@3a4799]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-22T23:15:45Z" finished-at="2018-04-22T23:15:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.cucumber.framework.runner.WomenProductVerification.RunnerWomenProductVerification -->
-    </test> <!-- Test -->
+      </class> <!-- com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner -->
+    </test> <!-- Windows+firefox Test -->
   </suite> <!-- Functional Test Suite_Chrome -->
 </testng-results>
