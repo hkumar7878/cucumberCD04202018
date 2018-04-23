@@ -61,7 +61,7 @@ public class TestBase {
 		setUpDriver(bName);
 		
 		System.out.println("Inside Before method");
-	    //actionBeforeClass.beforeTestAction(bName,scenarioName,"test");
+	    actionBeforeClass.beforeTestAction(bName,scenarioName,"test");
 	}
 	
 	@After

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Functional Test Suite_Chrome" verbose="1" thread-count="1">
-  <test name="Windows+firefox Test" >
+  <test name="Chrome Test" >
   <parameter name="browserType" value="Firefox"></parameter> 
  <classes> 				
 		<class name="com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner"></class>	

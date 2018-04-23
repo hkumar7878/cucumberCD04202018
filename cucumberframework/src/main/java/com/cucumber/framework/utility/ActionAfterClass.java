@@ -17,8 +17,8 @@ public class ActionAfterClass {
 		
 		else if (browserID.contains("Chrome"))
 		{
-			TestBase.report.endTest(testBaseObj.CH_logger);
-			TestBase.report.flush();
+			TestBase.report1.endTest(testBaseObj.CH_logger);
+			TestBase.report1.flush();
 			System.out.println("Extent report is flushed for Chrome");
 		}
 	}

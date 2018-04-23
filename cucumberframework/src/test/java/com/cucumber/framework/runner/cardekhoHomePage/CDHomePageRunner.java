@@ -1,16 +1,21 @@
 package com.cucumber.framework.runner.cardekhoHomePage;
 
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.configreader.ObjectRepo;
 import com.cucumber.framework.configreader.PropertyFileReader;
 import com.cucumber.framework.utility.ActionAfterClass;
+import com.relevantcodes.extentreports.DisplayOrder;
+import com.relevantcodes.extentreports.ExtentReports;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.Scenario;
@@ -30,7 +35,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		monochrome = false
 )
 
-public class CDHomePageRunner {
+public class CDHomePageRunner extends TestBase{
 	
 	
 	TestBase testbaseObj= new TestBase();
@@ -54,6 +59,31 @@ public class CDHomePageRunner {
 		actionAfterClassObj.actionAfterTest(testbaseObj.scenarioName, "Chrome");
 		System.out.println("After executing the test");
 	}
+	
+	
+	@BeforeTest
+	@Parameters({"browserType"})
+    public void onBeforeTest(String browserType,ITestContext testContext)
+	 	{
+		 	String XMLtestCaseName=testContext.getName();
+		 	
+		 	try
+		 	{
+		 		if(XMLtestCaseName.contains("Chrome"))
+	            {
+		 			System.out.println("Step 1 of report start");
+		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
+	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
+	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
+	                System.out.println("Inside Before Test class: Chrome & Extent Report for" + browserID + "is Initilized");
+	}
+		 	}
+		 	
+		 	catch(Exception e)
+		 	{
+		 		System.out.println(e.getMessage());
+		 	}
+	 	}
 	
 	@Test()
 	public void runCukes()
