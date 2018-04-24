@@ -1,12 +1,18 @@
 package com.cucumber.framework.Helper.genericHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
-public class GenericHelper {
+public class GenericHelper{
 
 	private static final Logger log=LoggerHelper.getLogger(GenericHelper.class);
 	
@@ -44,7 +50,7 @@ public class GenericHelper {
 		return value;
 	}
 	
-	public boolean isDisplayed(WebElement element)
+	public static boolean isDisplayed(WebElement element)
 	{
 		try
 		{
@@ -57,5 +63,52 @@ public class GenericHelper {
 			log.info(ex);
 			return false;
 		}
+	}
+	
+	
+	public static boolean click(WebElement element)
+	{
+		boolean flag=false;
+		try
+		{
+		if(element.isDisplayed())
+		{
+			element.click();
+			System.out.println(element.getText().toString() + "is clicked successfully");
+			flag=true;		
+		}
+		else
+			{
+				throw new RuntimeException("Element is not displayed" + element.getTagName().toString());
+			}
+		}
+		
+		catch (RuntimeException e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return flag;
+	}
+	
+	public static boolean hoverOverElement(WebElement we,WebDriver dr,List<WebElement> dropDown)
+	{
+		boolean flag=false;	
+		try
+		{
+			Actions act = new Actions(dr);
+			act.moveToElement(we).build().perform();
+			Thread.sleep(3000);
+			
+			if(dropDown.size()>1)
+				flag=true;	
+			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return flag;
 	}
 }

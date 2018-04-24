@@ -14,7 +14,7 @@ import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.configreader.ObjectRepo;
 import com.cucumber.framework.configreader.PropertyFileReader;
-import com.cucumber.framework.pageobject.CarDekhoHomePage;
+import com.cucumber.framework.pageobject.HomePageCarDekho;
 import com.cucumber.framework.pageobject.LoginPage;
 import com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory;
 
@@ -26,37 +26,17 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 public class CDHomePageNewCarMenuSD {
 	private final Logger log= LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
-	CarDekhoHomePage cdHomePgObject;
+	HomePageCarDekho cdHomePgObject;
 	TestBase testbaseObj= new TestBase();
 	public WebDriver driver;
 	
-	/*@BeforeTest()
-	//@Before
-	public void before() throws Exception
-	{
-		System.out.println("Before TESTNG before method");
-		System.out.println("Starting of Before method");
-		ObjectRepo.reader=new PropertyFileReader();
-		String bName=ObjectRepo.reader.getBrowserName();
-		//setUpDriver(ObjectRepo.reader.getBrowser());
-		testbaseObj.setUpDriver(bName);
-		//log.info(ObjectRepo.reader.getBrowser());
-		System.out.println("Inside Before method");
-	}
-	
-	@AfterTest()
-	public void after(Scenario scenario)
-	{
-		testbaseObj.driver.quit();
-		//log.info("");
-	}*/
-//@Test
+
 @Then("^verify New Cars drop down on home page$")
 public void user_verifies_home_page_is_displayed() throws Throwable {
 	driver=TestBase.driver;
 	System.out.println(driver.hashCode());
-	cdHomePgObject= new CarDekhoHomePage(driver);
-	cdHomePgObject.verifyNewCarDropdown();
+	cdHomePgObject= new HomePageCarDekho(driver);
+	cdHomePgObject.verifyNewCarDropdown(cdHomePgObject.browserID);
    
 }
 

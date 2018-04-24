@@ -1,4 +1,4 @@
-package com.cucumber.framework.runner.cardekhoHomePage;
+package com.cucumber.framework.runner.cardekhoNewCar;
 
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -24,18 +24,19 @@ import cucumber.api.java.Before;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features={"classpath:featurefile/HomePageCarDekho/HomePage.feature"}
+@CucumberOptions(features={"classpath:featurefile/NewCar/NewCar.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
 		plugin = {"html:target/cucumber-html-report",
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
+        tags ={"@TC_001"},
 		dryRun=false,
 		monochrome = false
 )
 
-public class CDHomePageRunner extends TestBase{
+public class CDNewCarVerificationRunner extends TestBase{
 	
 	
 	TestBase testbaseObj= new TestBase();
