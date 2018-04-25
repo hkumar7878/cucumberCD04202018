@@ -20,7 +20,7 @@ public class TC_001_NewCarDropDownOptionVerification {
 	HomePageCarDekho cdHomePgObject;
 	TestBase testbaseObj= new TestBase();
 	List<String> newCarDropDownValues= Arrays.asList("Search New Cars","Latest Cars","Popular Cars","Upcoming Cars"
-			,"Offers and Discount","Dealers/Service Centers","On Road Price","Win iPhone");
+			,"Offers and Discount","Dealers & Service Centers","On Road Price","Win iPhone");
 	public WebDriver driver;
 	
 	
@@ -29,13 +29,14 @@ public class TC_001_NewCarDropDownOptionVerification {
 		driver=TestBase.driver;
 		System.out.println(driver.hashCode());
 		cdHomePgObject= new HomePageCarDekho(driver);
-		cdHomePgObject.verifyNewCarDropdown(cdHomePgObject.browserID);
+		System.out.println("Inside step def and browser Name is " + TestBase.browserID);
+		cdHomePgObject.verifyNewCarDropdown(TestBase.browserID);
 	    
 	}
 
 	@And("^hover over New drop down$")
 	public void hover_over_New_drop_down() throws Throwable {
-		cdHomePgObject.hoverOverNewCarMenu(cdHomePgObject.browserID);
+		cdHomePgObject.hoverOverNewCarMenu(TestBase.browserID);
 	
 	}
 
@@ -46,7 +47,7 @@ public class TC_001_NewCarDropDownOptionVerification {
 	    
 		try
 		{
-			cdHomePgObject.verifyNewCarMenuOptions(newCarDropDownValues);
+			cdHomePgObject.verifyNewCarMenuOptions(newCarDropDownValues,TestBase.browserID);
 		}
 		
 		catch(Exception e)

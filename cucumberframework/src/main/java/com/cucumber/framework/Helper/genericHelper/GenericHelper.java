@@ -97,7 +97,7 @@ public class GenericHelper{
 		{
 			Actions act = new Actions(dr);
 			act.moveToElement(we).build().perform();
-			Thread.sleep(3000);
+			//Thread.sleep(3000);
 			
 			if(dropDown.size()>1)
 				flag=true;	
@@ -110,5 +110,23 @@ public class GenericHelper{
 		}
 		
 		return flag;
+	}
+	
+	public static boolean defaultSelection(WebElement we)
+	{
+		boolean flag=false;
+		try
+		{
+		if( isDisplayed (we))
+			//&& we.isSelected()
+			return true;
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return flag;
+		
 	}
 }

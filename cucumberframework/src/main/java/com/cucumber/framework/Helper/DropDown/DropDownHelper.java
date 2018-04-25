@@ -18,18 +18,21 @@ import com.cucumber.framework.Helper.Logger.LoggerHelper;
 
 
 
+import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 
 import org.apache.log4j.Logger;
 public class DropDownHelper {
 
 	private WebDriver driver;
-	private final Logger Log=LoggerHelper.getLogger(DropDownHelper.class);
+	private final static Logger log=LoggerHelper.getLogger(DropDownHelper.class);
+	
+	WaitHelper waitHelper = new WaitHelper(driver);
 	
 	public DropDownHelper(WebDriver driver)
 	{
 		this.driver=driver;
-		Log.debug("DropDownHelper : " + this.driver.hashCode());
+		log.debug("DropDownHelper : " + this.driver.hashCode());
 	}
 	
 	 
@@ -40,15 +43,20 @@ public class DropDownHelper {
 	{
 		Select select  = new Select(element);
 		select.selectByVisibleText(visibleValue);
-		Log.info("Locator : " + element + "Value : " + visibleValue);
+		log.info("Locator : " + element + "Value : " + visibleValue);
 	}
 	
-	public String getSelectedValue(WebElement element)
+	public static String getSelectedValue(WebElement element)
 	{
 		String value=new Select(element).getFirstSelectedOption().getText();
-		Log.info("WebElement : " +element + " value : " +value);
+		log.info("WebElement : " +element + " value : " +value);
 		return value;
 	}
+	
+	/*public String getSelectedIndexValue(WebElement element)
+	{
+		
+	}*/
 	
 	/*public List getAllDropDownValues(WebElement locator)
 	{
@@ -92,12 +100,12 @@ public class DropDownHelper {
 	public static List<String> getAllOptionsInDropDown(List<WebElement> dropDown)
 	{
 		List<String> dropDownValues= new ArrayList<String>();
+		
+		
 		try
 		{
 		for(WebElement we: dropDown)
-			{
 				dropDownValues.add(we.getText());
-			}
 		}
 		catch (Exception e)
 		{

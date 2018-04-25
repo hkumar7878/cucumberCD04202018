@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="24096" started-at="2018-04-23T10:33:13Z" finished-at="2018-04-23T10:33:37Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="92094" started-at="2018-04-25T14:58:26Z" finished-at="2018-04-25T14:59:58Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="24096" started-at="2018-04-23T10:33:13Z" finished-at="2018-04-23T10:33:37Z">
-      <class name="com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@4d95d2a2]" name="beforeSuite" is-config="true" duration-ms="13" started-at="2018-04-23T16:03:13Z" finished-at="2018-04-23T16:03:13Z">
+    <test name="Chrome Test" duration-ms="92094" started-at="2018-04-25T14:58:26Z" finished-at="2018-04-25T14:59:58Z">
+      <class name="com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="beforeSuite" is-config="true" duration-ms="28" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:28:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="onBeforeTest(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@4d95d2a2]" name="onBeforeTest" is-config="true" duration-ms="326" started-at="2018-04-23T16:03:13Z" finished-at="2018-04-23T16:03:13Z">
+        <test-method status="PASS" signature="onBeforeTest(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="onBeforeTest" is-config="true" duration-ms="334" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:28:26Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Firefox]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@15923407]]>
+                <![CDATA[org.testng.TestRunner@5dbb50f3]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onBeforeTest -->
-        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@4d95d2a2]" name="runCukes" duration-ms="22980" started-at="2018-04-23T16:03:13Z" finished-at="2018-04-23T16:03:36Z">
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="runCukes" duration-ms="85538" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:29:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@4d95d2a2]" name="afterTest" is-config="true" duration-ms="769" started-at="2018-04-23T16:03:36Z" finished-at="2018-04-23T16:03:37Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="afterTest" is-config="true" duration-ms="6182" started-at="2018-04-25T20:29:52Z" finished-at="2018-04-25T20:29:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner@4d95d2a2]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-23T16:03:37Z" finished-at="2018-04-23T16:03:37Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-25T20:29:58Z" finished-at="2018-04-25T20:29:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.cucumber.framework.runner.cardekhoHomePage.CDHomePageRunner -->
+      </class> <!-- com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner -->
     </test> <!-- Chrome Test -->
   </suite> <!-- Functional Test Suite_Chrome -->
 </testng-results>

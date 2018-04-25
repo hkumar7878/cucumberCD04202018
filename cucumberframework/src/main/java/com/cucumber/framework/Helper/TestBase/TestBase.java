@@ -38,7 +38,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop=null;
 	ActionBeforeClass actionBeforeClass;
-	public String browserID=null;
+	public static String browserID=null;
 	String XMLtestCaseName=null;
 	String app_URL=null;
 	

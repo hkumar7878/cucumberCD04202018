@@ -16,6 +16,7 @@ import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.Helper.Wait.WaitHelper;
 import com.cucumber.framework.Helper.genericHelper.GenericHelper;
+import com.cucumber.framework.utility.ApplicationLib;
 import com.relevantcodes.extentreports.LogStatus;
 
 public class HomePageCarDekho extends TestBase{
@@ -24,6 +25,7 @@ public class HomePageCarDekho extends TestBase{
 	private final Logger log = LoggerHelper.getLogger(HomePage.class);
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
+	static boolean flag;
 	
 	public HomePageCarDekho(WebDriver driver)
 	{
@@ -49,10 +51,24 @@ public class HomePageCarDekho extends TestBase{
 	@FindBy(xpath="//a[@title='New Cars']//following-sibling::div/ul/li")
     List<WebElement> dropDownNewCar;
 	
+	@FindBy(xpath="//a[@title='New Cars']//following-sibling::div/ul/li")
+    WebElement dropDownOption_SearchNewCar;
+	
+	@FindBy(xpath="//li[@id='homeNewCarTab']")
+    WebElement tabNewCar;
+	
+	@FindBy(xpath="//label[@id='searchNewCarByBudgetInputDiv']")
+    WebElement radiabBtnByBudget;
+	
+	@FindBy(xpath="//label[@id='searchNewCarByBudgetInputDiv']")
+    WebElement dropDownSelectBudget;
+	
+	@FindBy(xpath="//select[@id='newCarVehicleTypeSelect']")
+    WebElement dropDownAllVehicleType;
 	
 	public void verifyHomePageDisplay(String brName)
 	{
-		boolean flag;
+		//boolean flag;
 		try
 		{
 			log.info("Checking Car Dekho home page");
@@ -74,7 +90,7 @@ public class HomePageCarDekho extends TestBase{
 	
 	public void verifyNewCarDropdown(String brName)
 	{
-		boolean flag;
+		//boolean flag;
 		try
 		{
 			
@@ -96,12 +112,13 @@ public class HomePageCarDekho extends TestBase{
 		}
 	}
 	
-	public void hoverOverNewCarMenu(String brName)
+	public void hoverOverNewCarMenu(String brName) throws InterruptedException
 	{
-		boolean flag=false;
+		//boolean flag=false;
 		try
 		{
 			flag=GenericHelper.hoverOverElement(menuNewCars,driver,dropDownNewCar);
+			waitHelper.waitForElement(driver, dropDownOption_SearchNewCar, 10);
 			Assert.assertTrue(flag,"Could not hover over New Car menu");
 			if(brName.contains("Chrome"))
 			{
@@ -118,20 +135,96 @@ public class HomePageCarDekho extends TestBase{
 		}
 	}
 	
-	public void verifyNewCarMenuOptions(List<String> newCarOptions)
+	public void verifyNewCarMenuOptions(List<String> newCarOptions,String brName)
 	{
-		boolean flag=false;
+		//boolean flag=false;
 		List<String> newCarOptions1= new ArrayList<String>();
 		try
 		{
 			newCarOptions1=DropDownHelper.getAllOptionsInDropDown(dropDownNewCar);
 			
-			System.out.println(newCarOptions1);
+			flag=ApplicationLib.campareStringLists(newCarOptions, newCarOptions1);
+			System.out.println("Value for fetched car values from application" + newCarOptions1);
+			Assert.assertTrue(flag,"Incorrect values are shown in New Car drop down");
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "Expeceted values are shown in New Car drop down");
+			}
+			
 		}
 		
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, "Expeceted values are NOT shown in New Car drop down");
+		}
+	}
+	
+	public void verifyNewCarTabSelection(String brName)
+	{
+		try
+		{
+			
+			flag=GenericHelper.defaultSelection(tabNewCar);
+			Assert.assertTrue(flag,"New Car tab is not selected by default");
+			System.out.println("New Car tab is selected by default");
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "New Car tab is selected by default");
+			}
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, "New Car tab is not selected by default");
+		}
+	}
+	
+	public void verifyByCarRadialBtnSelection(String brName)
+	{
+		try
+		{
+			
+			flag=GenericHelper.defaultSelection(radiabBtnByBudget);
+			Assert.assertTrue(flag,"By Car radial button is not selected by default");
+			System.out.println("By Car radial button is selected by default");
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "By Car radial button is selected by default");
+			}
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, "By Car radial is not selected by default");
+		}
+	}
+	
+	public void verifyDefaultBudgetDropDownValue(String brName,String defaultVal)
+	{
+		String defActBudgetVal=null;
+		try
+		{
+			defActBudgetVal=DropDownHelper.getSelectedValue(dropDownSelectBudget);
+			Assert.assertEquals(defActBudgetVal, defaultVal);
+			System.out.println(defActBudgetVal + "value is matching with exp value i.e " + defaultVal);
+			
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, defActBudgetVal + "Correct Budget drop down is being displayed");
+			}
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, defActBudgetVal + "Correct Budget drop down is not being displayed");
+			}
 		}
 	}
 

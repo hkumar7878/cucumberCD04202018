@@ -31,7 +31,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt",
         "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
-        tags ={"@TC_001"},
+        tags ={"~@TC_001","@TC_002"},
 		dryRun=false,
 		monochrome = false
 )
@@ -67,13 +67,14 @@ public class CDNewCarVerificationRunner extends TestBase{
     public void onBeforeTest(String browserType,ITestContext testContext)
 	 	{
 		 	String XMLtestCaseName=testContext.getName();
-		 	browserID=browserType ;
+		 	browserID=browserType;
 		 	
 		 	try
 		 	{
 		 		if(XMLtestCaseName.contains("Chrome"))
 	            {
-		 			System.out.println("Step 1 of report start");
+		 			System.out.println("Step 1 of report start and browserID is " + browserID);
+		 			
 		 			System.out.println("Inside Before Test class of BASE CLASS: Chrome");
 	                String filePath=System.getProperty("user.dir")+"\\"+ "TestReportsFirefox.html";
 	                report1=new ExtentReports(filePath,true, DisplayOrder.OLDEST_FIRST);
