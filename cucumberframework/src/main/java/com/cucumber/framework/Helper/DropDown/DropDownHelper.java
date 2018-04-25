@@ -53,6 +53,26 @@ public class DropDownHelper {
 		return value;
 	}
 	
+	public static String getSelectedValueByOption(WebElement element,int index)
+	{
+		String firstOptionTxt=null;
+		try
+		{
+			Select select= new Select(element);
+		
+			List<WebElement> options= select.getOptions();
+			firstOptionTxt=options.get(index).getText();
+			System.out.println("First option for drop down Budget is"  + firstOptionTxt);
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return firstOptionTxt;
+	}
+	
 	/*public String getSelectedIndexValue(WebElement element)
 	{
 		

@@ -60,7 +60,7 @@ public class HomePageCarDekho extends TestBase{
 	@FindBy(xpath="//label[@id='searchNewCarByBudgetInputDiv']")
     WebElement radiabBtnByBudget;
 	
-	@FindBy(xpath="//label[@id='searchNewCarByBudgetInputDiv']")
+	@FindBy(xpath="//select[@id='newCarBudgetSelect']")
     WebElement dropDownSelectBudget;
 	
 	@FindBy(xpath="//select[@id='newCarVehicleTypeSelect']")
@@ -207,7 +207,7 @@ public class HomePageCarDekho extends TestBase{
 		String defActBudgetVal=null;
 		try
 		{
-			defActBudgetVal=DropDownHelper.getSelectedValue(dropDownSelectBudget);
+			defActBudgetVal=DropDownHelper.getSelectedValueByOption(dropDownSelectBudget,0);
 			Assert.assertEquals(defActBudgetVal, defaultVal);
 			System.out.println(defActBudgetVal + "value is matching with exp value i.e " + defaultVal);
 			
