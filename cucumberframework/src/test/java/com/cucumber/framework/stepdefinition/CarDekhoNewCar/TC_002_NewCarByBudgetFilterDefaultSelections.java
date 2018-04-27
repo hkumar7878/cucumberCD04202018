@@ -20,6 +20,12 @@ public class TC_002_NewCarByBudgetFilterDefaultSelections {
 	HomePageCarDekho cdHomePgObject;
 	TestBase testbaseObj= new TestBase();
 	
+	List<String> newCarBudgetDropDownExpOptions=Arrays.asList("-Select Budget-","1-lakh-5-lakh","5-lakh-10-lakh","10-lakh-20-lakh",
+			"20-lakh-50-lakh","50-lakh-1-crore","above-1-crore");
+	
+	List<String> newCarAllVehicleTypeDropDownExpOptions= Arrays.asList("All Vehicle Types","Hatchback","Sedans","MUV","SUV",
+			"luxury","Hybrids","Minivans","Convertibles","Coupe","Diesel Engines","Wagons","Pickup Trucks");
+	
 	public WebDriver driver;
 	
 	@Then("^verify New Car tab is selected by default$")
@@ -32,8 +38,6 @@ public class TC_002_NewCarByBudgetFilterDefaultSelections {
 		
 	}
 	
-	
-	
 	@Then("^Verify By Budget radial button is selected by default$")
 	public void verify_By_Budget_radial_button_is_selected_by_default() throws Throwable {
 		cdHomePgObject.verifyByCarRadialBtnSelection(TestBase.browserID);
@@ -42,15 +46,30 @@ public class TC_002_NewCarByBudgetFilterDefaultSelections {
 
 	@Then("^verify default value of budget drop down$")
 	public void verify_default_value_of_budget_drop_down() throws Throwable {
-		cdHomePgObject.verifyDefaultBudgetDropDownValue(TestBase.browserID, "-Select Budget-");
+		cdHomePgObject.verifyDefaultDropDownValue(TestBase.browserID,"Budget", "-Select Budget-");
 	  
 	}
 
 	@Then("^verify default value of vehicle type drop down$")
 	public void verify_default_value_of_vehicle_type_drop_down() throws Throwable {
 	 
-		cdHomePgObject.verifyDefaultBudgetDropDownValue(TestBase.browserID, "All Vehicle Types");
+		cdHomePgObject.verifyDefaultDropDownValue(TestBase.browserID,"Vehicle", "All Vehicle Types");
 	}
+	
+
+	@Then("^verfiy the values for Budget drop down values$")
+	public void verfiy_the_values_for_Budget_drop_down_values() throws Throwable {
+		cdHomePgObject.verifyNewCarBudgetDropDownOptions(newCarBudgetDropDownExpOptions, TestBase.browserID);
+	}
+
+	@Then("^verfiy the values for Vehicle drop down values$")
+	public void verfiy_the_values_for_Vehicle_drop_down_values() throws Throwable {
+		
+		cdHomePgObject.verifyNewCarAllVehicleTypeDropDownOptions(newCarAllVehicleTypeDropDownExpOptions, TestBase.browserID);
+	    
+	}
+
+
 
 
 }

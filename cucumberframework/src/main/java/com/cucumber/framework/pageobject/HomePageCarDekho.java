@@ -26,6 +26,7 @@ public class HomePageCarDekho extends TestBase{
 	WaitHelper waitHelper;
 	GenericHelper generichelper= new GenericHelper();
 	static boolean flag;
+	public static String err_Msg;
 	
 	public HomePageCarDekho(WebDriver driver)
 	{
@@ -202,19 +203,35 @@ public class HomePageCarDekho extends TestBase{
 		}
 	}
 	
-	public void verifyDefaultBudgetDropDownValue(String brName,String defaultVal)
+	public void verifyDefaultDropDownValue(String brName,String defDropDownType,String defaultVal)
 	{
-		String defActBudgetVal=null;
+		String defActBudgetVal = null,defActVehicleVal=null;
 		try
 		{
-			defActBudgetVal=DropDownHelper.getSelectedValueByOption(dropDownSelectBudget,0);
-			Assert.assertEquals(defActBudgetVal, defaultVal);
-			System.out.println(defActBudgetVal + "value is matching with exp value i.e " + defaultVal);
-			
-			if(brName.contains("Chrome"))
+			if(defDropDownType.equals("Budget"))
 			{
-				CH_logger.log(LogStatus.PASS, defActBudgetVal + "Correct Budget drop down is being displayed");
+					defActBudgetVal=DropDownHelper.getSelectedValueByOption(dropDownSelectBudget,0);
+					Assert.assertEquals(defActBudgetVal, defaultVal);
+					System.out.println(defActBudgetVal + "value is matching with exp value i.e " + defaultVal);
+					
+					if(brName.contains("Chrome"))
+					{
+						CH_logger.log(LogStatus.PASS, defActBudgetVal + "Correct Budget drop down is being displayed");
+					}
 			}
+			
+			if(defDropDownType.equals("Vehicle"))
+			{
+					defActVehicleVal=DropDownHelper.getSelectedValueByOption(dropDownAllVehicleType,0);
+					Assert.assertEquals(defActVehicleVal, defaultVal);
+					System.out.println(defActVehicleVal + "value is matching with exp value i.e " + defaultVal);
+					if(brName.contains("Chrome"))
+					{
+						CH_logger.log(LogStatus.PASS, defActVehicleVal + "Correct Budget drop down is being displayed");
+					}
+			}
+			
+			
 		}
 		
 		catch(Exception e)
@@ -225,6 +242,73 @@ public class HomePageCarDekho extends TestBase{
 			{
 				CH_logger.log(LogStatus.PASS, defActBudgetVal + "Correct Budget drop down is not being displayed");
 			}
+		}
+	}
+	
+	public void verifyNewCarBudgetDropDownOptions(List<String> newCarBudgetOptions,String brName)
+	{
+		//boolean flag=false;
+		List<String> newCarBudgetOptions1= new ArrayList<String>();
+		try
+		{
+			newCarBudgetOptions1=DropDownHelper.getAllOptionsInDropDown_Select(dropDownSelectBudget);
+			
+			flag=ApplicationLib.campareStringLists(newCarBudgetOptions, newCarBudgetOptions1);
+			System.out.println("Value for fetched new car budget values from application" + newCarBudgetOptions1);
+			Assert.assertTrue(flag,"Incorrect budget values are shown in budget drop down");
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "Expeceted values are shown in Budget drop down for New Car");
+			}
+			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, "Expeceted values are NOT shown in Budget drop down for New Car");
+		}
+	}
+	
+	public void verifyNewCarAllVehicleTypeDropDownOptions(List<String> newCarAllVehicleOptions,String brName)
+	{
+		//boolean flag=false;
+		List<String> newCarAllVehicleTypeOptions1= new ArrayList<String>();
+		try
+		{
+			newCarAllVehicleTypeOptions1=DropDownHelper.getAllOptionsInDropDown_Select(dropDownAllVehicleType);
+			
+			flag=ApplicationLib.campareStringLists(newCarAllVehicleOptions, newCarAllVehicleTypeOptions1);
+			System.out.println("Value for fetched new car budget values from application" + newCarAllVehicleTypeOptions1);
+			Assert.assertTrue(flag,"Incorrect All Vehicle type values are shown in budget drop down");
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "Expeceted values are shown in All Vehicle type drop down for New Car");
+			}
+			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			CH_logger.log(LogStatus.FAIL, "Expeceted values are NOT shown in All Vehicle type drop down for New Car");
+		}
+	}
+	
+	public void selectOptionForNewCarForSearch(String optVal,String brName)
+	{
+		try
+		{
+			if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "Option " + optVal + "is selected successfully");
+			}
+		}
+		
+		catch (Exception e)
+		{
+			e.getMessage();
+			
 		}
 	}
 

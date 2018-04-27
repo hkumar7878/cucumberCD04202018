@@ -73,6 +73,28 @@ public class DropDownHelper {
 		return firstOptionTxt;
 	}
 	
+	public static boolean selectDropDownByVal(WebElement element,String optionVal)
+	{
+		String selectedVal=null;
+		boolean flag=false;
+		try
+		{
+			Select select= new Select(element);
+			select.selectByValue(optionVal);
+			selectedVal=getSelectedValue(element);
+			if(selectedVal.equals(optionVal))
+				flag=true;
+			System.out.println("Selected the " + optionVal + "value");
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return flag;
+	}
+	
 	/*public String getSelectedIndexValue(WebElement element)
 	{
 		
@@ -88,7 +110,7 @@ public class DropDownHelper {
 		
 	}*/
 	
-	public List<String> getAllOptionsInDropDown_Select(WebElement dropDownElement)
+	public static List<String> getAllOptionsInDropDown_Select(WebElement dropDownElement)
 	{
 		List<String> dropDownValues= new ArrayList<String>();
 		List<WebElement> dropDownOptions= new ArrayList<WebElement>();

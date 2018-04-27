@@ -15,6 +15,7 @@ import org.openqa.selenium.support.ui.Select;
 public class GenericHelper{
 
 	private static final Logger log=LoggerHelper.getLogger(GenericHelper.class);
+	public static String exception_Msg;
 	
 	public String readValueFromElement(WebElement element)
 	{
@@ -71,21 +72,26 @@ public class GenericHelper{
 		boolean flag=false;
 		try
 		{
-		if(element.isDisplayed())
-		{
-			element.click();
-			System.out.println(element.getText().toString() + "is clicked successfully");
-			flag=true;		
+		//if(element.isDisplayed())
+			
+		if(GenericHelper.isDisplayed(element))
+			{
+				element.click();
+				System.out.println(element.getText().toString() + "is clicked successfully");
+				flag=true;		
 		}
 		else
 			{
-				throw new RuntimeException("Element is not displayed" + element.getTagName().toString());
+				throw new RuntimeException("Throwing run time exception for Element is not displayed" + element.getTagName().toString());
 			}
 		}
 		
 		catch (RuntimeException e)
 		{
 			System.out.println(e.getMessage());
+			log.info("Throwing run time exception for Element is not displayed for elemenet  " + element.getTagName().toString());
+			exception_Msg=e.getMessage()+ element.getTagName().toString();
+			
 		}
 		return flag;
 	}
