@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.configreader.ObjectRepo;
-import com.cucumber.framework.pageobject.HomePageCarDekho;
+import com.cucumber.framework.pageobject.PageHomeCarDekho;
 import com.cucumber.framework.pageobject.LoginPage;
 import com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory;
 
@@ -23,7 +23,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 public class CDHomePageSD {
 	private final Logger log= LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
-	HomePageCarDekho cdHomePgObject;
+	PageHomeCarDekho cdHomePgObject;
 	public WebDriver driver;
 	
 
@@ -37,7 +37,7 @@ public void navigate_to_web_site() throws Throwable {
 public void user_verifies_home_page_is_displayed() throws Throwable {
 	driver=TestBase.driver;
 	System.out.println(driver.hashCode());
-	cdHomePgObject= new HomePageCarDekho(driver);
+	cdHomePgObject= new PageHomeCarDekho(driver);
 	cdHomePgObject.verifyHomePageDisplay(cdHomePgObject.browserID);
    
 }

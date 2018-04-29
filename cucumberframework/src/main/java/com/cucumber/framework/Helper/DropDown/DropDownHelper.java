@@ -48,7 +48,7 @@ public class DropDownHelper {
 	
 	public static String getSelectedValue(WebElement element)
 	{
-		String value=new Select(element).getFirstSelectedOption().getText();
+		String value=new Select(element).getFirstSelectedOption().getText().trim();
 		log.info("WebElement : " +element + " value : " +value);
 		return value;
 	}
@@ -80,9 +80,9 @@ public class DropDownHelper {
 		try
 		{
 			Select select= new Select(element);
-			select.selectByValue(optionVal);
+			select.selectByVisibleText(optionVal.trim());
 			selectedVal=getSelectedValue(element);
-			if(selectedVal.equals(optionVal))
+			if(selectedVal.equals(optionVal.trim()))
 				flag=true;
 			System.out.println("Selected the " + optionVal + "value");
 		}

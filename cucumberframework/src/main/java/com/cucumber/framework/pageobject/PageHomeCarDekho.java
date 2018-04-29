@@ -19,7 +19,7 @@ import com.cucumber.framework.Helper.genericHelper.GenericHelper;
 import com.cucumber.framework.utility.ApplicationLib;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class HomePageCarDekho extends TestBase{
+public class PageHomeCarDekho extends TestBase{
 	
 	WebDriver driver;
 	private final Logger log = LoggerHelper.getLogger(HomePage.class);
@@ -28,7 +28,7 @@ public class HomePageCarDekho extends TestBase{
 	static boolean flag;
 	public static String err_Msg;
 	
-	public HomePageCarDekho(WebDriver driver)
+	public PageHomeCarDekho(WebDriver driver)
 	{
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -66,6 +66,9 @@ public class HomePageCarDekho extends TestBase{
 	
 	@FindBy(xpath="//select[@id='newCarVehicleTypeSelect']")
     WebElement dropDownAllVehicleType;
+	
+	@FindBy(xpath="//div[@id='searchNewCarByBudgetDiv']//button[text()='Search']")
+	WebElement btnSearch;
 	
 	public void verifyHomePageDisplay(String brName)
 	{
@@ -295,21 +298,72 @@ public class HomePageCarDekho extends TestBase{
 		}
 	}
 	
-	public void selectOptionForNewCarForSearch(String optVal,String brName)
+	/***
+	 * This method will select either budget amount or type of vehicle
+	 * @param optVal : Either Value of budget or Type of Vehicle
+	 * @param brName : Browser name for extent report
+	 */
+	
+	
+	public void selectOptionForNewCarForSearch(String optVal,String brName,String typeOfOption)
 	{
+		
 		try
 		{
-			if(brName.contains("Chrome"))
+			if(typeOfOption.equals("budgetOption"))
 			{
-				CH_logger.log(LogStatus.PASS, "Option " + optVal + "is selected successfully");
+				flag=DropDownHelper.selectDropDownByVal(dropDownSelectBudget, optVal);
+				Assert.assertTrue(flag,optVal + " could not be selected");
+				if(brName.contains("Chrome"))
+					{
+						CH_logger.log(LogStatus.PASS, "Option " + optVal + "is selected successfully");
+					}
+			}
+			
+			if(typeOfOption.equals("vehicleType"))
+			{
+				flag=DropDownHelper.selectDropDownByVal(dropDownAllVehicleType, optVal);
+				if(brName.contains("Chrome"))
+					{
+						CH_logger.log(LogStatus.PASS, "Option " + optVal + "is selected successfully");
+					}
 			}
 		}
 		
 		catch (Exception e)
 		{
 			e.getMessage();
+			CH_logger.log(LogStatus.FAIL, optVal + "could not be selected");
 			
 		}
+	}
+	
+	
+	public PageSearchResults clickSearchBtn(String brName)
+	{
+		
+		
+		try
+		{
+		flag=GenericHelper.click(btnSearch);
+		Assert.assertTrue(flag,"Search button could not be clicked");
+		System.out.println("Search button on home page is clicked successfully");
+		if(brName.contains("Chrome"))
+			{
+				CH_logger.log(LogStatus.PASS, "Search button on home page is clicked successfully");
+			}
+		log.info("Search button was clicked successfully");
+		}
+		
+		catch(Exception e)
+		{
+			e.getMessage();
+			CH_logger.log(LogStatus.FAIL, "Search button on home page was not clicked");
+			log.info("Search button was not clicked on home page");
+			
+		}
+	
+		return new PageSearchResults(driver);
 	}
 
 }

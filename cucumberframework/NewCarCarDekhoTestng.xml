@@ -5,7 +5,7 @@
   <parameter name="browserType" value="Chrome"></parameter> 
  <classes> 				
 		<class name="com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner"></class>	
-</classes>
+</classes>                                                       
  
 </test> 
 

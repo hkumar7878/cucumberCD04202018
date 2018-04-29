@@ -77,7 +77,7 @@ public class GenericHelper{
 		if(GenericHelper.isDisplayed(element))
 			{
 				element.click();
-				System.out.println(element.getText().toString() + "is clicked successfully");
+				//System.out.println(element.getText().toString() + "is clicked successfully");
 				flag=true;		
 		}
 		else

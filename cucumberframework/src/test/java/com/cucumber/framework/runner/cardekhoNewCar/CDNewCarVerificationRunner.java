@@ -32,7 +32,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
         "usage:target/cucumber-usage.json"},
 	 //  plugin = {"com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
         tags ={"~@TC_001","~@TC_002","@TC_003"},
-		dryRun=true,
+		dryRun=false,
 		monochrome = false
 )
 
