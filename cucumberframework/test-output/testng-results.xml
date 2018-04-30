@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functional Test Suite_Chrome" duration-ms="92094" started-at="2018-04-25T14:58:26Z" finished-at="2018-04-25T14:59:58Z">
+  <suite name="Functional Test Suite_Chrome" duration-ms="1575" started-at="2018-04-27T12:14:01Z" finished-at="2018-04-27T12:14:02Z">
     <groups>
     </groups>
-    <test name="Chrome Test" duration-ms="92094" started-at="2018-04-25T14:58:26Z" finished-at="2018-04-25T14:59:58Z">
+    <test name="Chrome Test" duration-ms="1575" started-at="2018-04-27T12:14:01Z" finished-at="2018-04-27T12:14:02Z">
       <class name="com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="beforeSuite" is-config="true" duration-ms="28" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:28:26Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@4d95d2a2]" name="beforeSuite" is-config="true" duration-ms="17" started-at="2018-04-27T17:44:01Z" finished-at="2018-04-27T17:44:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="onBeforeTest(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="onBeforeTest" is-config="true" duration-ms="334" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:28:26Z">
+        <test-method status="PASS" signature="onBeforeTest(java.lang.String, org.testng.ITestContext)[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@4d95d2a2]" name="onBeforeTest" is-config="true" duration-ms="792" started-at="2018-04-27T17:44:01Z" finished-at="2018-04-27T17:44:01Z">
           <params>
             <param index="0">
               <value>
@@ -20,22 +20,22 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@5dbb50f3]]>
+                <![CDATA[org.testng.TestRunner@6c2ed0cd]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onBeforeTest -->
-        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="runCukes" duration-ms="85538" started-at="2018-04-25T20:28:26Z" finished-at="2018-04-25T20:29:52Z">
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@4d95d2a2]" name="runCukes" duration-ms="735" started-at="2018-04-27T17:44:01Z" finished-at="2018-04-27T17:44:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runCukes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="afterTest" is-config="true" duration-ms="6182" started-at="2018-04-25T20:29:52Z" finished-at="2018-04-25T20:29:58Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@4d95d2a2]" name="afterTest" is-config="true" duration-ms="1" started-at="2018-04-27T17:44:02Z" finished-at="2018-04-27T17:44:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@6c779568]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-25T20:29:58Z" finished-at="2018-04-25T20:29:58Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.cucumber.framework.runner.cardekhoNewCar.CDNewCarVerificationRunner@4d95d2a2]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-27T17:44:02Z" finished-at="2018-04-27T17:44:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
