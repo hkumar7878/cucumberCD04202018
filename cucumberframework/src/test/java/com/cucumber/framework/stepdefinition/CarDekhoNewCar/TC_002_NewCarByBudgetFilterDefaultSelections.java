@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
-import com.cucumber.framework.pageobject.HomePageCarDekho;
+import com.cucumber.framework.pageobject.PageHomeCarDekho;
 import com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory;
 
 import cucumber.api.java.en.And;
@@ -17,7 +17,7 @@ import cucumber.api.java.en.Then;
 public class TC_002_NewCarByBudgetFilterDefaultSelections {
 	
 	private final Logger log= LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
-	HomePageCarDekho cdHomePgObject;
+	PageHomeCarDekho cdHomePgObject;
 	TestBase testbaseObj= new TestBase();
 	
 	List<String> newCarBudgetDropDownExpOptions=Arrays.asList("-Select Budget-","1-lakh-5-lakh","5-lakh-10-lakh","10-lakh-20-lakh",
@@ -32,7 +32,7 @@ public class TC_002_NewCarByBudgetFilterDefaultSelections {
 	public void verify_New_Car_tab_is_selected_by_default() throws Throwable {
 		driver=TestBase.driver;
 		System.out.println(driver.hashCode());
-		cdHomePgObject= new HomePageCarDekho(driver);
+		cdHomePgObject= new PageHomeCarDekho(driver);
 		System.out.println("Inside step def and browser Name is " + TestBase.browserID);
 		cdHomePgObject.verifyNewCarTabSelection(TestBase.browserID);
 		

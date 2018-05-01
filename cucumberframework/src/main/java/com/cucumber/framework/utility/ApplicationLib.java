@@ -2,6 +2,8 @@ package com.cucumber.framework.utility;
 
 import java.util.List;
 
+import org.testng.Assert;
+
 public class ApplicationLib {
 	
 	public static boolean campareStringLists(List<String> expListValues,List<String> actListValues)
@@ -34,7 +36,22 @@ public class ApplicationLib {
 		return flag;
 	}
 	
-	
+	public static boolean verifyHeader(String actTxt,String expTxt)
+	{
+		boolean flag=false;
+		try
+		{
+			if(actTxt.contains(expTxt))
+			return true;
+		}
+		
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		return flag;
+	}
 	
 
 }

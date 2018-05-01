@@ -14,7 +14,7 @@ import com.cucumber.framework.Helper.Logger.LoggerHelper;
 import com.cucumber.framework.Helper.TestBase.TestBase;
 import com.cucumber.framework.configreader.ObjectRepo;
 import com.cucumber.framework.configreader.PropertyFileReader;
-import com.cucumber.framework.pageobject.HomePageCarDekho;
+import com.cucumber.framework.pageobject.PageHomeCarDekho;
 import com.cucumber.framework.pageobject.LoginPage;
 import com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProductCategory;
 
@@ -26,7 +26,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 
 public class CDHomePageNewCarMenuSD {
 	private final Logger log= LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
-	HomePageCarDekho cdHomePgObject;
+	PageHomeCarDekho cdHomePgObject;
 	TestBase testbaseObj= new TestBase();
 	public WebDriver driver;
 	
@@ -35,7 +35,7 @@ public class CDHomePageNewCarMenuSD {
 public void user_verifies_home_page_is_displayed() throws Throwable {
 	driver=TestBase.driver;
 	System.out.println(driver.hashCode());
-	cdHomePgObject= new HomePageCarDekho(driver);
+	cdHomePgObject= new PageHomeCarDekho(driver);
 	cdHomePgObject.verifyNewCarDropdown(cdHomePgObject.browserID);
    
 }
