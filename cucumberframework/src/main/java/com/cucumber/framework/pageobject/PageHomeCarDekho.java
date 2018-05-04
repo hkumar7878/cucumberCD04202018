@@ -305,7 +305,7 @@ public class PageHomeCarDekho extends TestBase{
 	 */
 	
 	
-	public void selectOptionForNewCarForSearch(String optVal,String brName,String typeOfOption)
+	public void selectOptionForNewCarForSearch(String optVal,String brName,String typeOfOption )
 	{
 		
 		try

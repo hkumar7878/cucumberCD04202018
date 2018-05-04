@@ -24,7 +24,7 @@ import cucumber.api.java.Before;
 import cucumber.api.testng.TestNGCucumberRunner;
 
 
-@CucumberOptions(features={"classpath:featurefile/NewCar/NewCar.feature"}
+@CucumberOptions(features={"classpath:featurefile/NewCar/NewCarDataTable.feature"}
 ,glue={"classpath:com.cucumber.framework.stepdefinition",
 	   "classpath:com.cucumber.framework.Helper"},
 		plugin = {"html:target/cucumber-html-report",

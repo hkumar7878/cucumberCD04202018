@@ -14,7 +14,7 @@ import com.cucumber.framework.stepdefinition.ProductCategory.TestWomenTopsProduc
 
 import cucumber.api.java.en.Then;
 
-public class TC_003_NewCar_BudgetWithVehicleType {
+public class TC_003_NewCar_BudgetWithVehicleTypeDataTable {
 
 	private final Logger log = LoggerHelper.getLogger(TestWomenTopsProductCategory.class);
 	PageHomeCarDekho cdHomePgObject;
@@ -24,34 +24,28 @@ public class TC_003_NewCar_BudgetWithVehicleType {
 	public WebDriver driver;
 	List<String> searchOptions= Arrays.asList("HatchBack","Rs 1 Lakh to Rs 5 Lakh");
 
-	/*@Then("^select budget value from Select Budget drop down$")
-	public void select_budget_value_from_Select_Budget_drop_down()
-			throws Throwable {
-
+	@Then("^select \"([^\"]*)\" value from Select Budget drop down$")
+	public void select_value_from_Select_Budget_drop_down(String vehicleBudget) throws Throwable {
 		driver = TestBase.driver;
 		System.out.println(driver.hashCode());
 		cdHomePgObject = new PageHomeCarDekho(driver);
-		System.out.println("Inside step def and browser Name is "
-				+ TestBase.browserID);
+		System.out.println("Inside step def and browser Name is " + TestBase.browserID);
+		cdHomePgObject.selectOptionForNewCarForSearch(vehicleBudget,TestBase.browserID, "budgetOption");
 	}
 
-	@Then("^select vehicle type from All Vehicle Types drop down$")
-	public void select_vehicle_type_from_All_Vehicle_Types_drop_down() throws Throwable {
-		cdHomePgObject.selectOptionForNewCarForSearch("1 Lakh - 5 Lakh",TestBase.browserID, "budgetOption");
+	@Then("^select \"([^\"]*)\" from All Vehicle Types drop down$")
+	public void select_from_All_Vehicle_Types_drop_down(String vehicleType) throws Throwable {
+		cdHomePgObject.selectOptionForNewCarForSearch(vehicleType,TestBase.browserID, "vehicleType");
 	}
 
 	@Then("^click on search button$")
 	public void click_on_search_button() throws Throwable {
-		cdHomePgObject.selectOptionForNewCarForSearch("Hatchback",TestBase.browserID, "vehicleType");
-
-	}
-
-	@Then("^verify that required next page is displayed$")
-	public void verify_that_required_next_page_is_displayed() throws Throwable {
-		//searchPgObject= new PageSearchResults(driver);
-
 		searchPgObject = cdHomePgObject.clickSearchBtn(TestBase.browserID);
-		searchPgObject.verifyResults(TestBase.browserID,searchOptions);
 	}
-*/
+	
+	@Then("^verify that search result page is displayed by displaying correct expected budget \"([^\"]*)\" and vehicle type \"([^\"]*)\"$")
+	public void verify_that_search_result_page_is_displayed_by_displaying_correct_expected_budget_and_vehicle_type(String expBudgetVal, String expVehicleName) throws Throwable {
+		searchPgObject.verifyResults(TestBase.browserID,expBudgetVal,expVehicleName);
+	}
+
 }

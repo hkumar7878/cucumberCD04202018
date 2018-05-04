@@ -41,7 +41,7 @@ public class ApplicationLib {
 		boolean flag=false;
 		try
 		{
-			if(actTxt.contains(expTxt))
+			if(actTxt.toLowerCase().contains(expTxt.toLowerCase()))
 			return true;
 		}
 		

@@ -1,6 +1,7 @@
 package com.cucumber.framework.pageobject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -38,7 +39,7 @@ public class PageSearchResults extends TestBase {
 	@FindBy(xpath = "//main[@class='maintitle']")
 	WebElement maintitle;
 
-	@FindBy(xpath = "//main[@class='maintitle']")
+	@FindBy(xpath = "//main[@class='maintitle']//h1")
 	WebElement hdTxtSearchResult;
 
 	/**
@@ -47,8 +48,11 @@ public class PageSearchResults extends TestBase {
 	 * of vehicle selected from car dekho home page
 	 */
 
-	public void verifyResults(String brName, List<String> searchOptions) {
+	public void verifyResults(String brName, String expBudgetVal,String expVehcileType) {
 		alertHelper = new AlertHelper(driver);
+		
+		List<String> expValues=Arrays.asList(expBudgetVal,expVehcileType);
+		String tempString="";
 
 		try {
 			flag = alertHelper.isAlertPresent();
@@ -64,16 +68,21 @@ public class PageSearchResults extends TestBase {
 			else 
 			{
 				String hdTxt = generichelper.readValueFromElement(hdTxtSearchResult);
-				for (int i = 0; i < searchOptions.size(); i++) 
+				for (int i = 0; i < expValues.size(); i++) 
 				{
-					flag = ApplicationLib.verifyHeader(hdTxt, searchOptions.get(i));
-					if (!flag) 
-					{
-						CH_logger.log(LogStatus.FAIL, searchOptions.get(i) + "not displayed successfully");
-						break;
-					}
-					
+					String searchOptionTxt=expValues.get(i);
+					flag = ApplicationLib.verifyHeader(hdTxt, searchOptionTxt);
+						if (!flag) 
+							{
+								CH_logger.log(LogStatus.FAIL, expValues.get(i) + "not displayed successfully");
+								break;
+							}
+						tempString=tempString+searchOptionTxt;
 				}
+				
+				if(flag)
+					CH_logger.log(LogStatus.PASS, tempString + "displayed successfully");
+				
 				
 			}
 		}
